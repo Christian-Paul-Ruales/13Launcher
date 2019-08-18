@@ -6,13 +6,18 @@ import android.content.pm.ResolveInfo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.NonNull
+import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.*
+import android.support.v7.widget.LinearLayoutManager
+
+
 
 class AppsList_Activity : AppCompatActivity() {
     private var manager:PackageManager?=null /**Manejar las apps*/
     private var Apps:ArrayList<Item>?=null /**Lista de apps*/
-    private var AppsListView:ListView?=null /**Listview para mostrar las apps(grafico)*/
+    private var AppsListView:GridView?=null /**Listview para mostrar las apps(grafico)*/
 
     //Metodo Creacion, Similar a un constructor
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,10 +62,12 @@ class AppsList_Activity : AppCompatActivity() {
 
     /**----------------------------------Metodo cargar apps en la Lista----------*/
     private fun LoadListView(){
-        AppsListView=findViewById(R.id.ListAppDrawer) as ListView
 
 
+        AppsListView=findViewById(R.id.ListAppDrawer) as GridView
 
+
+        var adapter=CustomAdapter(applicationContext,Apps)
         AppsListView!!.adapter=CustomAdapter(applicationContext, Apps) /**Adapter Personalizado CustomAdapter*/
 
 
@@ -72,6 +79,9 @@ class AppsList_Activity : AppCompatActivity() {
             var intent:Intent =manager!!.getLaunchIntentForPackage(Apps!!.get(position).label.toString())
             startActivity(intent)
         }
+
+
+
     }
 
 

@@ -10,10 +10,26 @@
 
     <Button
             android:text="^"
-            android:layout_width="331dp"
-            android:layout_height="76dp"
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:id="@+id/btnDock"
-            android:layout_marginBottom="21dp"
-            android:layout_centerHorizontal="true"/>
+            android:layout_marginBottom="131dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/background_light" android:textSize="24sp"/>
+    <GridView
+            android:id="@+id/ListDock"
+            android:columnWidth="70dp"
+            android:numColumns="4"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="spacingWidthUniform"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="350dp"
+            android:layout_height="83dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"/>
 </RelativeLayout>

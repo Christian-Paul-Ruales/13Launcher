@@ -14,8 +14,8 @@ class CustomAdapter(var context: Context, var apps:ArrayList<Item>?):BaseAdapter
 
 
     private class ViewHolder(row: View?){
-         var nameApp: TextView//app name
-         var iconApp: ImageView// app icon
+        var nameApp: TextView//app name
+        var iconApp: ImageView// app icon
         init {
             this.nameApp=row?.findViewById(R.id.name) as TextView /** res\layout*/
             this.iconApp=row?.findViewById(R.id.image) as ImageView
