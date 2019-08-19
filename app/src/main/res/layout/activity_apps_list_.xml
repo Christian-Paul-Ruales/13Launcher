@@ -7,32 +7,42 @@
         android:orientation="vertical"
         android:layout_height="match_parent"
         tools:context=".AppsList_Activity">
-    <EditText
-            android:hint="Search(Aun no funciona)"
-            android:inputType="textAutoComplete"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#ffffff"
-    />
+
     <GridView
             android:id="@+id/ListAppDrawer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:overScrollMode="never"
 
-            android:columnWidth="70dp"
+            android:columnWidth="60dp"
             android:numColumns="5"
-            android:verticalSpacing="20dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="0dp"
-            android:horizontalSpacing="10dp"
-            android:stretchMode="spacingWidthUniform"
+            android:verticalSpacing="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="70dp"
+            android:horizontalSpacing="1dp"
+            android:stretchMode="columnWidth"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="#ffffff"
-    ></GridView>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"></GridView>
+
+
+    <SearchView
+            android:id="@+id/SearchApps"
+            android:hint="Buscar"
+            android:inputType="textAutoComplete"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#ffffff"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
 
 
