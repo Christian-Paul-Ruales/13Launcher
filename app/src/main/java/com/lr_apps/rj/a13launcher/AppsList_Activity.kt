@@ -72,11 +72,9 @@ class AppsList_Activity : AppCompatActivity() {
         for (r1 in availableActivities){
             var app:Item = Item()
             app!!.label=r1.activityInfo.packageName
-
             app!!.name=r1.loadLabel(manager)
-
             app!!.icon = r1.loadIcon(manager)
-            
+
             if(find.equals("")){
                 Apps!!.add(app)
             }else{
@@ -88,26 +86,17 @@ class AppsList_Activity : AppCompatActivity() {
                             Apps!!.add(app)
                         }
                     }else{
-
                         var sizeSearched=find.split(" ").size
 
-
-                        for (num in 0..NameAplication.size){
-                            if(num<(NameAplication.size-1)){
-                                var index_next_word=num+1
+                        for (num in 0..(NameAplication.size-sizeSearched)){
                                 var new_word=""
+                                for(n2 in 0 until sizeSearched){
 
-                                for(n2 in 0..sizeSearched){
-                                    if(n2<num){
                                         if(n2==0){
                                             new_word=NameAplication[num+n2]
                                         }else{
                                             new_word=new_word+" "+NameAplication[num+n2]
                                         }
-
-                                        print("-------------------------------------------New Word:"+new_word)
-                                    }
-
 
                                 }
 
@@ -115,23 +104,15 @@ class AppsList_Activity : AppCompatActivity() {
                                     Apps!!.add(app)
                                 }
 
-                            }
-
-
 
                         }
                     }
                 }else{
-
-
                         for (part_name in NameAplication){
                             if(part_name.startsWith(find,ignoreCase =true)){
                                 Apps!!.add(app)
                             }
                         }
-
-
-
 
                 }
 
